@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="212.0" prefWidth="402.0" styleClass="pane" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.PasswordGenerator">
+   <children>
+      <TextField fx:id="myTextField" editable="false" layoutX="190.0" layoutY="80.0" prefHeight="26.0" prefWidth="206.0" promptText="Password" styleClass="tf_Box">
+         <effect>
+            <Glow level="1.0" />
+         </effect></TextField>
+      <Button fx:id="bt_generate" layoutX="192.0" layoutY="116.0" mnemonicParsing="false" onAction="#createPassword" prefHeight="26.0" prefWidth="87.0" styleClass="btn" text="Generate!" />
+      <Spinner fx:id="mySpinner" editable="true" layoutX="89.0" layoutY="80.0" prefHeight="25.0" prefWidth="68.0" />
+      <Label layoutX="24.0" layoutY="84.0" text="Length:" />
+      <Button fx:id="bt_Clear" layoutX="345.0" layoutY="116.0" mnemonicParsing="false" onAction="#clearTextField" styleClass="btn" text="Clear" />
+      <Label alignment="CENTER" layoutY="14.0" prefHeight="17.0" prefWidth="402.0" stylesheets="@styles.css" text="PassGen" textFill="#fcfed3">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
+      </Label>
+      <VBox layoutX="24.0" layoutY="112.0" prefHeight="98.0" prefWidth="154.0">
+         <children>
+            <RadioButton fx:id="rb_uppercase" mnemonicParsing="false" onAction="#getParameters" text="Uppercase (ex. ABC)">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </RadioButton>
+            <RadioButton fx:id="rb_lowercase" mnemonicParsing="false" onAction="#getParameters" text="Lowercase (ex. abc)">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </RadioButton>
+            <RadioButton fx:id="rb_numbers" mnemonicParsing="false" onAction="#getParameters" text="Numbers (ex. 123)">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </RadioButton>
+            <RadioButton fx:id="rb_symbols" mnemonicParsing="false" onAction="#getParameters" text="Symbols (ex. @%$)" />
+         </children>
+      </VBox>
+      <Button fx:id="bt_copy" layoutX="287.0" layoutY="116.0" mnemonicParsing="false" onAction="#copyPassword" styleClass="btn" text="Copy" />
+   </children>
+</AnchorPane>

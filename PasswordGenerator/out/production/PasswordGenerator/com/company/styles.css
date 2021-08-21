@@ -1,0 +1,45 @@
+.pane {
+    -fx-background-color: #2196f3;
+}
+
+.tf_Box {
+    -fx-background-color: transparent;
+    -fx-border-color: #DEDEE4;
+    -fx-border-width: 0px 0px 1px 0px;
+    -fx-text-fill: white;
+}
+
+.btn {
+    -fx-background-color: transparent;
+    -fx-background-radius: 5px;
+    -fx-border-color: white;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+    -fx-text-fill: whitesmoke;
+}
+
+.btn: hover {
+    -fx-font-size: 110%;
+}
+
+.label {
+  -fx-text-fill: white;
+  -fx-font-family: Verdana, Arial, Tahoma, Serif;
+  -fx-font-weight: bold;
+  -fx-font-style: italic;
+ }
+
+.spinner {
+    -fx-background-color: transparent;
+    -fx-border-color: #DEDEE4;
+    -fx-border-width: 0px 0px 1px 0px;
+    -fx-text-fill: white;
+}
+
+.text {
+    -fx-text-fill: whitesmoke;
+    -fx-font-family: Verdana, Arial, Tahoma, Serif;
+    -fx-font-style: italic;
+}
+
+
