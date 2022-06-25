@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="212.0" prefWidth="402.0" styleClass="pane" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.PasswordGenerator">
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="212.0" prefWidth="402.0" styleClass="pane" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PasswordGenerator">
    <children>
       <TextField fx:id="myTextField" editable="false" layoutX="190.0" layoutY="80.0" prefHeight="26.0" prefWidth="206.0" promptText="Password" styleClass="tf_Box">
          <effect>
@@ -50,5 +50,6 @@
          </children>
       </VBox>
       <Button fx:id="bt_copy" layoutX="287.0" layoutY="116.0" mnemonicParsing="false" onAction="#copyPassword" styleClass="btn" text="Copy" />
+      <Button fx:id="bt_export" layoutX="243.0" layoutY="149.0" mnemonicParsing="false" onAction="#exportToFile" styleClass="btn" text="Copy to File" />
    </children>
 </AnchorPane>
