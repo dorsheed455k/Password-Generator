@@ -11,6 +11,7 @@ import javafx.scene.input.ClipboardContent;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 
+import java.io.*;
 import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
@@ -25,6 +26,8 @@ public class PasswordGenerator implements Initializable {
     private RadioButton rb_uppercase, rb_lowercase, rb_numbers, rb_symbols;
     @FXML
     private Button btn_copy;
+    @FXML
+    private Button bt_export;
     @FXML
     private TextField myTextField;
 
@@ -80,6 +83,38 @@ public class PasswordGenerator implements Initializable {
        // System.out.println("Generate");
     }
 
+    public void exportToFile(ActionEvent event) throws IOException {
+        String text = myTextField.getText();
+        FileWriter fw = null;
+        BufferedWriter bw = null;
+        PrintWriter pw = null;
+
+        File file = new File("passwords.txt");
+        try {
+            file.setWritable(true);
+            file.setReadable(true);
+            fw = new FileWriter(file, true);
+            bw = new BufferedWriter(fw);
+            pw = new PrintWriter(bw);
+
+            pw.println("Password: " + text);
+            pw.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            pw.close();
+            bw.close();
+            fw.close();
+        }
+
+        String parent = file.getAbsoluteFile().getParent();
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Success");
+        alert.setContentText("Password saved to Password.txt file successfully\nDirectory: " + parent);
+        alert.showAndWait();
+    }
+
     public void clearTextField(ActionEvent event) {
         myTextField.clear();
     }
@@ -115,6 +150,11 @@ public class PasswordGenerator implements Initializable {
             content.putString(myTextField.getText());
             clipboard.setContent(content);
         }
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Success");
+        alert.setContentText("Password successfully copied to clipboard");
+        alert.showAndWait();
     }
 
     static String password(int len) {
